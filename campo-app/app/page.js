@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 
-const ESTADOS = ['Pendiente','Llamado','No contesta','Interesado','No interesado','Ocupado','Apagado','nuevo','Wasapp','NoNumero','seguimiento','TelpNoExiste'];
+const ESTADOS = ['Pendiente','Llamado','No contesta','Interesado','No interesado','Ocupado','Apagado','nuevo ','Wasapp ','NoNumero','seguimiento ','TelpNoExiste'];
 const ETAPAS = ['Nuevo','WhatsApp enviado','Contactado','Visita agendada','Visitado','Cotización enviada','Seguimiento','Llamar nuevamente','No contesta','Telp Apagado','TelpNoExiste','No quiere','Cierre ganado','Cliente','telp ocupado'];
 const PROCEDENCIAS = ['Call Center','Visita en frío','Referido','Redes sociales','Otro','Denuncia policial'];
 const SEGUIMIENTOS = ['Sin empezar','En curso','Instalado','No quiere','WhatsApp'];
