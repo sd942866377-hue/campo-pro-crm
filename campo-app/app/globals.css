@@ -141,7 +141,7 @@ body {
   .page-content { padding: 16px 14px 80px; }
 
   /* ── MOBILE FONT SIZES ── */
-  body { font-size: 16px; }
+  body { font-size: 18px; }
 
   .field label { font-size: 0.875rem; }
   /* 1rem = 16px evita el auto-zoom de iOS en inputs */
