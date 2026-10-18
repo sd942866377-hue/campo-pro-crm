@@ -139,6 +139,44 @@ body {
   .mobile-header { display: flex; }
   .bottom-nav { display: block; }
   .page-content { padding: 16px 14px 80px; }
+
+  /* ── MOBILE FONT SIZES ── */
+  body { font-size: 16px; }
+
+  .field label { font-size: 0.875rem; }
+  /* 1rem = 16px evita el auto-zoom de iOS en inputs */
+  .field input, .field select, .field textarea {
+    font-size: 1rem;
+    padding: 11px 13px;
+  }
+
+  .section-title { font-size: 0.75rem; }
+
+  .record-card .rc-name { font-size: 1.05rem; }
+  .record-card .rc-meta { font-size: 0.875rem; gap: 8px; }
+
+  .badge { font-size: 0.8rem; padding: 4px 10px; }
+
+  .bottom-nav button { font-size: 0.72rem; }
+  .bottom-nav button .bn-icon { font-size: 1.4rem; }
+
+  .stat-card .num { font-size: 1.75rem; }
+  .stat-card .lbl { font-size: 0.8rem; }
+
+  .btn { font-size: 0.95rem; padding: 11px 18px; }
+  .btn-sm { font-size: 0.875rem; padding: 9px 14px; }
+  .btn-block { padding: 13px 18px; font-size: 1rem; }
+
+  .checkbox-row label { font-size: 0.95rem; }
+  .alert { font-size: 0.9rem; }
+
+  .modal-title { font-size: 1.1rem; }
+  .mobile-header h1 { font-size: 1.05rem; }
+
+  /* toolbar: apila en columna en pantallas muy pequeñas */
+  .records-toolbar { flex-direction: column; gap: 8px; }
+  .records-toolbar input,
+  .records-toolbar select { min-width: 0; width: 100%; font-size: 1rem; }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
