@@ -1,7 +1,20 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 
-const ESTADOS = ['Pendiente','Llamado','No contesta','Interesado','No interesado','Ocupado','Apagado','nuevo ','Wasapp ','NoNumero','seguimiento ','TelpNoExiste'];
+const ESTADOS = [
+  { label: 'Pendiente', value: 'Pendiente' },
+  { label: 'Llamado', value: 'Llamado' },
+  { label: 'No contesta', value: 'No contesta' },
+  { label: 'Interesado', value: 'Interesado' },
+  { label: 'No interesado', value: 'No interesado' },
+  { label: 'Ocupado', value: 'Ocupado' },
+  { label: 'Apagado', value: 'Apagado' },
+  { label: 'Nuevo', value: 'nuevo ' },
+  { label: 'Wasapp', value: 'Wasapp ' },
+  { label: 'NoNumero', value: 'NoNumero' },
+  { label: 'Seguimiento', value: 'seguimiento ' },
+  { label: 'TelpNoExiste', value: 'TelpNoExiste' },
+];
 const ETAPAS = ['Nuevo','WhatsApp enviado','Contactado','Visita agendada','Visitado','Cotización enviada','Seguimiento','Llamar nuevamente','No contesta','Telp Apagado','TelpNoExiste','No quiere','Cierre ganado','Cliente','telp ocupado'];
 const PROCEDENCIAS = ['Call Center','Visita en frío','Referido','Redes sociales','Otro','Denuncia policial'];
 const SEGUIMIENTOS = ['Sin empezar','En curso','Instalado','No quiere','WhatsApp'];
@@ -42,7 +55,10 @@ function Sel({ label, value, onChange, options }) {
     <Field label={label}>
       <select value={value} onChange={e => onChange(e.target.value)}>
         <option value="">— Seleccionar —</option>
-        {options.map(o => <option key={o}>{o}</option>)}
+        {options.map(o => typeof o === 'object'
+          ? <option key={o.value} value={o.value}>{o.label}</option>
+          : <option key={o} value={o}>{o}</option>
+        )}
       </select>
     </Field>
   );
@@ -303,7 +319,7 @@ export default function Home() {
                 />
                 <select value={filterEstado} onChange={e => setFilterEstado(e.target.value)}>
                   <option value="">Todos los estados</option>
-                  {ESTADOS.map(o => <option key={o}>{o}</option>)}
+                  {ESTADOS.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
                 </select>
                 <button className="btn btn-primary btn-sm" onClick={() => loadRecords('')}>Buscar</button>
               </div>
